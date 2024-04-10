@@ -1,0 +1,10 @@
+
+<button (click)="toggle()" class="p-2 bg-slate-200">Toggle</button>
+<div [hidden]="hideRooms">
+    <h2>{{numberOfRooms}}</h2>
+    <!-- <div [innerText]="numberOfRooms"></div> -->
+</div>
+
+<div *ngIf="rooms.availableRooms>0">
+
+</div>
