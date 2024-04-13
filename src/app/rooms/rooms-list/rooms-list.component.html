@@ -1,0 +1,23 @@
+<span>Rooms List:</span>
+
+<table class="w-[100vw] border border-black">
+    <thead>
+
+        <tr>
+            <th>Room Number</th>
+            <th>Room Type</th>
+            <th>Room Price</th>
+            <th>Room Amenities</th>
+            <th>Checkin Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr [ngClass]="e ? 'even' : ' odd'" *ngFor="let item of rooms; let i=index; let e=even;">
+            <td [ngClass]="{'text-center': true}"> <span>{{item.roomNumber}}</span></td>
+            <td [ngClass]="{'text-center': true}"> {{item.roomType}}</td>
+            <td [ngClass]="{'text-center': true}"> {{item.price | currency: 'INR'}}</td>
+            <td [ngClass]="{'text-center': true}"> {{item.amenities | titlecase}}</td>
+            <td [ngClass]="{'text-center': true}"> {{item.checkInTime | date:"short"}}</td>
+        </tr>
+    </tbody>
+</table>
